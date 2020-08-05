@@ -10,9 +10,6 @@ class CreateClients < ActiveRecord::Migration[6.0]
       t.string :phone
       t.string :email
 
-      t.has_many :users through :appointments
-      t.belongs_to :users
-
 
       t.timestamps
     end
