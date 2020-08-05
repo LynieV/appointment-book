@@ -4,6 +4,9 @@ class CreateUsers < ActiveRecord::Migration[6.0]
       t.string :username
       t.string :password_digest
 
+      t.has_many :clients through :appointments
+      t.has_many :appointments
+
       t.timestamps
     end
   end
