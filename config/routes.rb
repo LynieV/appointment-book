@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+
+  get '/' => 'sessions#welcome'
   resources :appointments
   resources :clients
   resources :users
