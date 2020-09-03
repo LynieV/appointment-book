@@ -28,6 +28,23 @@
     <%= f.label :client_notes %>
     <%= f.text_field :client_notes %>
 
+    <p> Choose An Appointment </p>
+        <div>
+            <%= f.collection_select :appointment_ids, Appointment.all, :id, :time %>
+        </div>
+
+        
+            <p> OR Create A Time </p>
+        <div>
+            <%= f.fields_for :appointment do |a| %>
+                <%= a.label :time %>
+                <%= a.text_field :time %>
+                <%= a.label :date %>
+                <%= a.text_field :date %>
+                <%= a.label :appointment_notes %>
+                <%= a.text_field :appointment_notes %>
+                <% end %>
+        </div>
     <%= f.submit "Create Client" %>
 
     <% end %>
