@@ -19,8 +19,7 @@ class ClientsController < ApplicationController
     private
 
     def client_params
-        params.require(:client).permit(:first_name, :last_name, :appointment_id
-        appointmnet_attributes: [:time])
+        params.require(:client).permit(:first_name, :last_name, :appointment_id, appointment_attributes: [:time])
     end
 
 end
